@@ -5,7 +5,8 @@
 body {
     font-family: "Open Sans", sans-serif;
     background-color: #f39494;
-    background: linear-gradient(45deg, rgb(243,148,149) 0%, rgb(249,178,195) 30%, rgb(253,197,197) 100%);
+    background: linear-gradient(225deg, #fdc5c5 25.45%, rgba(242, 152, 222, 0) 100%),
+        linear-gradient(225deg, #ffa5a5 33.09%, rgba(255, 255, 255, 0) 82.34%), #f39494;
 }
 
 a {
@@ -24,6 +25,7 @@ p {
 h1 {
     text-align: center;
     font-size: 36px;
+    color: #333;
 }
 
 button {
@@ -47,10 +49,10 @@ button:active {
 
 button svg {
     position: absolute;
-    top: 0;
-    right: 1rem;
-    width: 2.4em;
-    height: 2.4em;
+    top: 0.55rem;
+    right: 1.35rem;
+    width: 1.35em;
+    height: 1.35em;
 }
 
 form {
@@ -78,9 +80,34 @@ input[type="email"] {
 input:focus {
     background-color: #ffffff;
     font-style: normal;
-    color: #000000;
+    color: #333333;
     font-weight: bold;
     outline: none;
+}
+
+input[name='checkbox'] {
+    opacity: 0;
+}
+
+label[for='checkbox']::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 2px;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    background-color: #f5f5f5;
+    font-size: 11px;
+}
+
+input[name='checkbox']:checked + label[for='checkbox']::before {
+    background-color: #089fe0;
+    content: '✔';
+    padding: 0 3px;
+    color: white;
 }
 
 main {
@@ -102,7 +129,7 @@ main {
 }
 
 .container h1 {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.3rem;
 }
 
 .container h1+p {
@@ -131,4 +158,5 @@ form .user_name input:last-child {
 form .terms {
     font-size: 14px;
     margin: 0;
+    position: relative;
 }
